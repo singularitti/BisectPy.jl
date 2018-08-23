@@ -1,5 +1,6 @@
 module BisectPy
 
-greet() = print("Hello World!")
+include("Bisect.jl")
+include("Find.jl")
 
 end # module
