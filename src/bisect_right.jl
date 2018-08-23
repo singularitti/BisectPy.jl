@@ -23,7 +23,7 @@ julia>
 """
 function bisect_right(a, x, lo=0, hi=nothing)
     lo < 0 && error("The lower bound `lo` must be greater than 0!")
-    hi == nothing && hi = length(a)
+    hi == nothing && (hi = length(a))
 
     while lo < hi
         mid = (lo + hi) ÷ 2
