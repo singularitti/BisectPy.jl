@@ -4,6 +4,7 @@
 *.jl.*.cov
 *.jl.mem
 deps/deps.jl
+_init.jl
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
