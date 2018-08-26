@@ -13,8 +13,6 @@ julia>
 """
 module Find
 
-using BisectPy.Bisect
-
-BisectPy.Bisect.bisect_left
+using BisectPy
 
 end
