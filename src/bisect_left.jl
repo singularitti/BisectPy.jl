@@ -8,10 +8,6 @@ The return value `i` is such that all `e` in `a[:(i - 1)]` have `e < x`, and all
 `a[i:]` have `e >= x`.  So if `x` already appears in the array, `insert!(a, i, x)` will
 insert just before the leftmost `x` already there.
 
-- Julia version: 1.0
-- Author: qz
-- Date: 2018-08-23
-
 # Arguments
 Optional args `lo` (default `1`) and `hi` (default `length(a)`) bound the
 slice of `a` to be searched.
