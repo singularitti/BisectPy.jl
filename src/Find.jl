@@ -1,10 +1,6 @@
 """
 # module Find
 
-- Julia version: 1.0
-- Author: qz
-- Date: 2018-08-23
-
 # Examples
 
 ```jldoctest
@@ -13,6 +9,11 @@ julia>
 """
 module Find
 
-using BisectPy
+using BisectPy: bisect_left, bisect_right
+
+function index(a, x)
+    i = bisect_left(a, x)
+    (i != length(a) && a[i] == x) ? i : error("Index not found!")
+end
 
 end

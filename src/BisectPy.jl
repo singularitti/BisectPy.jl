@@ -1,3 +1,14 @@
+"""
+# module BisectPy
+
+
+
+# Examples
+
+```jldoctest
+julia>
+```
+"""
 module BisectPy
 
 include("bisect_left.jl")
