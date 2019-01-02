@@ -3,8 +3,12 @@ os:
   - linux
   - osx
 julia:
+  - 0.7
   - 1.0
   - nightly
+script: # the default script is equivalent to the following
+  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
+  - julia --color=yes -e 'import Pkg; Pkg.add("Test"); Pkg.clone(pwd()); Pkg.build("BisectPy"); Pkg.test("BisectPy"; coverage=true)';
 matrix:
   allow_failures:
     - julia: nightly
