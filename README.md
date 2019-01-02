@@ -1,5 +1,7 @@
 # BisectPy.jl
 
+[![Build Status](https://travis-ci.com/singularitti/BisectPy.jl.svg?branch=master)](https://travis-ci.com/singularitti/BisectPy.jl)
+
 This is a package that migrates Python's [`bisect` module](https://docs.python.org/3.7/library/bisect.html#module-bisect)
 to Jula.
 
