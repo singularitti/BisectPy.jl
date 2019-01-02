@@ -5,3 +5,8 @@ julia:
   - 0.7
 codecov: true
 coveralls: true
+script:
+  - julia --check-bounds=yes --color=yes test/*.jl
+notifications:
+  email:
+    - singularitti@outlook.com
