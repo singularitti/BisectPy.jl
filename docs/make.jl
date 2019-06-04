@@ -5,6 +5,10 @@ makedocs(;
     format=Documenter.HTML(),
     pages=[
         "Home" => "index.md",
+        "Manual" => [
+            "Bisect.md"
+            "Insort.md"
+        ]
     ],
     repo="https://github.com/singularitti/BisectPy.jl/blob/{commit}{path}#L{line}",
     sitename="BisectPy.jl",

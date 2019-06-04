@@ -16,7 +16,4 @@ Depth = 3
 
 ```
 
-```@autodocs
-Modules = [BisectPy]
-```
 
