@@ -30,12 +30,11 @@ julia> bisect_left([1, 2, 3, 3, 3, 5], 3)
 function bisect_left(a, x, lo = 1, hi = nothing)
     lo < 1 && throw(BoundsError(a, lo))
     hi === nothing && (hi = length(a))
-
     while lo < hi
         mid = (lo + hi) ÷ 2
         a[mid] < x ? lo = mid + 1 : hi = mid
     end
-    lo
+    return lo
 end
 
 """
@@ -68,10 +67,9 @@ julia> bisect_right([1, 2, 3, 3, 3, 5], 3)
 function bisect_right(a, x, lo = 1, hi = nothing)
     lo < 1 && throw(BoundsError(a, lo))
     hi === nothing && (hi = length(a))
-
     while lo < hi
         mid = (lo + hi) ÷ 2
         x < a[mid] ? hi = mid : lo = mid + 1
     end
-    lo
+    return lo
 end

@@ -11,7 +11,7 @@ slice of `a` to be searched.
 """
 function insort_left(a, x, lo = 1, hi = nothing)
     lo = bisect_left(a, x, lo, hi)
-    insert!(a, lo, x)
+    return insert!(a, lo, x)
 end
 
 """
@@ -25,5 +25,5 @@ slice of `a` to be searched.
 """
 function insort_right(a, x, lo = 1, hi = nothing)
     lo = bisect_right(a, x, lo, hi)
-    insert!(a, lo, x)
+    return insert!(a, lo, x)
 end
