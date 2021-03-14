@@ -1,7 +1,7 @@
 export insort_left, insort_right
 
 """
-    insort_left(a, x, lo=1, hi=nothing)
+    insort_left(a, x, lo = 1, hi = nothing)
 
 Insert item `x` in array `a`, and keep it sorted assuming `a` is sorted.
 
@@ -15,7 +15,7 @@ function insort_left(a, x, lo = 1, hi = nothing)
 end
 
 """
-    insort_right(a, x, lo=1, hi=nothing)
+    insort_right(a, x, lo = 1, hi = nothing)
 
 Insert item `x` in array `a`, and keep it sorted assuming `a` is sorted.
 
