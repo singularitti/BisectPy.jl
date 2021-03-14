@@ -1,24 +1,11 @@
-"""
-# module BisectPy
-
-
-
-# Examples
-
-```jldoctest
-julia>
-```
-"""
 module BisectPy
 
-using Reexport: @reexport
+include("bisect.jl")
+include("insort.jl")
 
-include("Bisect.jl")
-@reexport using .Bisect
+function index(a, x)
+    i = bisect_left(a, x)
+    return i != length(a) && a[i] == x ? i : error("Index not found!")
+end
 
-include("Insort.jl")
-@reexport using .Insort
-
-include("Find.jl")
-
-end # module
+end
