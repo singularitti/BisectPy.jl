@@ -1,16 +1,3 @@
-"""
-# module Bisect
-
-
-
-# Examples
-
-```jldoctest
-julia>
-```
-"""
-module Bisect
-
 export bisect_left, bisect_right
 
 """
@@ -40,7 +27,7 @@ julia> bisect_left([1, 2, 3, 3, 3, 5], 3)
 3
 ```
 """
-function bisect_left(a, x, lo=1, hi=nothing)
+function bisect_left(a, x, lo = 1, hi = nothing)
     lo < 1 && throw(BoundsError(a, lo))
     hi == nothing && (hi = length(a))
 
@@ -78,7 +65,7 @@ julia> bisect_right([1, 2, 3, 3, 3, 5], 3)
 6
 ```
 """
-function bisect_right(a, x, lo=1, hi=nothing)
+function bisect_right(a, x, lo = 1, hi = nothing)
     lo < 1 && throw(BoundsError(a, lo))
     hi == nothing && (hi = length(a))
 
@@ -87,6 +74,4 @@ function bisect_right(a, x, lo=1, hi=nothing)
         x < a[mid] ? hi = mid : lo = mid + 1
     end
     lo
-end
-
 end
