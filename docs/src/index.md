@@ -7,6 +7,7 @@ CurrentModule = BisectPy
 ## [Index](@id main-index)
 
 ```@index
+
 ```
 
 ```@autodocs
