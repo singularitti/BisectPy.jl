@@ -11,8 +11,8 @@ julia>
 """
 module BisectPy
 
-include("Bisect.jl")
-include("Insort.jl")
-include("Find.jl")
+include("bisect.jl")
+include("insort.jl")
+include("find.jl")
 
 end # module
