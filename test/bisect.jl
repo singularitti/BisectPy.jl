@@ -1,6 +1,6 @@
 using Test
 
-using BisectPy
+using BisectPy: bisect_left, bisect_right, index, find_lt, find_le, find_gt, find_ge
 
 @test bisect_left([1, 2, 3, 4, 5], 3.5) == 4
 
@@ -40,3 +40,32 @@ end
     @test data[bisect_left(keys, 5)] == ("red", 5)
     @test data[bisect_left(keys, 8)] == ("yellow", 8)
 end
+
+@test index([1, 2, 3, 4, 5], 3.5) === nothing
+@test index([1, 2, 2, 3, 4, 5], 2) == 2
+@test index([1, 2, 3, 4, 5], 5) == 5
+@test index([1, 2, 3, 4, 5], 6) === nothing
+
+@test find_lt([1, 2, 3, 4, 5], 2) == 1
+@test find_lt([1, 2, 2, 3, 4, 4, 5], 3) == 2
+@test find_lt([1, 2, 2, 3, 3.5, 4, 4, 5], 3.5) == 3
+@test find_lt([1, 2, 3, 4, 5], 0) === nothing
+@test find_lt([1, 2, 3, 4, 5], 6) == 5
+
+@test find_le([1, 2, 3, 4, 5], 2) == 2
+@test find_le([1, 2, 2, 3, 4, 4, 5], 3) == 3
+@test find_le([1, 2, 2, 3, 4, 5, 5], 3.5) == 3
+@test find_le([1, 2, 3, 4, 5], 0) === nothing
+@test find_le([1, 2, 3, 4, 5], 6) == 5
+
+@test find_gt([1, 2, 3, 4, 5], 2) == 3
+@test find_gt([1, 2, 2, 3, 4, 4, 5], 3) == 4
+@test find_gt([1, 2, 2, 3, 4, 5, 5], 3.5) == 4
+@test find_gt([1, 2, 3, 4, 5], 0) == 1
+@test find_gt([1, 2, 3, 4, 5, 5], 6) === nothing
+
+@test find_ge([1, 2, 3, 4, 5], 2) == 2
+@test find_ge([1, 2, 2, 3, 4, 4, 5], 3) == 3
+@test find_ge([1, 2, 2, 3, 4, 5, 5], 3.5) == 4
+@test find_ge([1, 2, 3, 4, 5], 0) == 1
+@test find_ge([1, 2, 3, 4, 5, 5], 6) === nothing
