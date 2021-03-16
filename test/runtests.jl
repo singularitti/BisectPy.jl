@@ -1,4 +1,13 @@
-using BisectPy: bisect_left, bisect_right, index, find_lt, find_le, find_gt, find_ge
+using BisectPy:
+    bisect_left,
+    bisect_right,
+    index,
+    find_lt,
+    find_le,
+    find_gt,
+    find_ge,
+    insort_left,
+    insort_right
 using Test
 
 @testset "BisectPy.jl" begin
@@ -40,6 +49,11 @@ using Test
         @test data[bisect_left(keys, 5)] == ("red", 5)
         @test data[bisect_left(keys, 8)] == ("yellow", 8)
     end
+
+    @test insort_left([1, 2, 3, 4, 5], 0) == [0, 1, 2, 3, 4, 5]
+    @test insort_left([1, 2, 3, 4, 5], 6) == [1, 2, 3, 4, 5, 6]
+    @test insort_right([1, 2, 3, 4, 5], 5) == [1, 2, 3, 4, 5, 5]
+    @test insort_right([1, 2, 3, 4, 5], 6) == [1, 2, 3, 4, 5, 6]
 
     @test index([1, 2, 3, 4, 5], 3.5) === nothing
     @test index([1, 2, 2, 3, 4, 5], 2) == 2
