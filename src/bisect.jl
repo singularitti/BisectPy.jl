@@ -32,7 +32,7 @@ function bisect_left(a, x, lo = 1, hi = nothing)
         throw(BoundsError(a, lo))
     end
     if hi === nothing
-        hi = length(a)
+        hi = length(a) + 1  # It's not `length(a)`!
     end
     while lo < hi
         mid = (lo + hi) ÷ 2
