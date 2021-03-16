@@ -16,8 +16,11 @@ end
 @testset "Boundary tests" begin
     @test bisect_left([1, 2, 3, 4, 5], 0) == 1
     @test bisect_left([1, 2, 3, 4, 5], 5) == 5
+    @test bisect_left([1, 2, 3, 4, 5], 6) == 6
+    @test bisect_right([1, 2, 3.0, 4, 5], 5) == 6
     @test bisect_right([1, 2, 3.0, 4, 5], 6) == 6
     @test bisect_right([1, 2, 3, 4, 5], 1) == 2
+    @test bisect_right([1, 2, 3, 4, 5], 0) == 1
 end
 
 @testset "`bisect_right`" begin
