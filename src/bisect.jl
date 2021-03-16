@@ -1,7 +1,7 @@
 export bisect_left, bisect_right, bisect
 
 """
-    bisect_left(a, x, lo = 1, hi = nothing)
+    bisect_left(a, x, lo = 1, hi = length(a))
 
 Return the index where to insert item `x` in array `a`, assuming `a` is in an
 non-decreasing order.
@@ -42,7 +42,7 @@ function bisect_left(a, x, lo = 1, hi = nothing)
 end
 
 """
-    bisect_right(a, x, lo = 1, hi = nothing)
+    bisect_right(a, x, lo = 1, hi = length(a) + 1)
 
 Return the index where to insert item `x` in array `a`, assuming `a` is in an
 non-decreasing order.
