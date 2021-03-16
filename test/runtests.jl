@@ -23,15 +23,15 @@ using Test
         @test bisect_right([1, 2, 3, 4, 5], 0) == 1
     end
 
-    @testset "`bisect_right`" begin
+    @testset "`Python example 1`" begin
         function grade(score, breakpoints = [60, 70, 80, 90], grades = "FDCBA")
-            i = bisect(breakpoints, score)
+            i = bisect_right(breakpoints, score)
             return grades[i]
         end
         @test [grade(score) for score in [33, 99, 77, 70, 89, 90, 100]] == ['F', 'A', 'C', 'C', 'B', 'A', 'A']
     end
 
-    @testset "`bisect_left`" begin
+    @testset "`Python example 2`" begin
         data = [("red", 5), ("blue", 1), ("yellow", 8), ("black", 0)]
         sort!(data)
         keys = [r[2] for r in sort(data)]
