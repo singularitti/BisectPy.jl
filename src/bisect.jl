@@ -1,7 +1,7 @@
 export bisect_left, bisect_right, bisect
 
 """
-    bisect_left(a, x, lo = 1, hi = length(a))
+    bisect_left(a, x, lo = 1, hi = length(a) + 1)
 
 Return the index where to insert item `x` in array `a`, assuming `a` is in an
 non-decreasing order.
@@ -11,7 +11,7 @@ The return value `i` is such that all `e` in `a[:(i - 1)]` have `e < x`, and all
 insert just before the leftmost `x` already there.
 
 # Arguments
-Optional args `lo` (default `1`) and `hi` (default `length(a)`) bound the
+Optional args `lo` (default `1`) and `hi` (default `length(a) + 1`) bound the
 slice of `a` to be searched.
 
 # Examples
