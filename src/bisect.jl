@@ -52,7 +52,7 @@ The return value `i` is such that all `e` in `a[:(i - 1)]` have `e <= x`, and al
 insert just after the rightmost `x` already there.
 
 # Arguments
-Optional args `lo` (default `1`) and `hi` (default `length(a)`) bound the
+Optional args `lo` (default `1`) and `hi` (default `length(a) + 1`) bound the
 slice of `a` to be searched.
 
 # Examples
