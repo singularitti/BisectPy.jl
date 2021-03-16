@@ -1,4 +1,4 @@
-export bisect_left, bisect_right
+export bisect_left, bisect_right, bisect
 
 """
     bisect_left(a, x, lo = 1, hi = nothing)
@@ -73,3 +73,5 @@ function bisect_right(a, x, lo = 1, hi = nothing)
     end
     return lo
 end
+
+const bisect = bisect_right

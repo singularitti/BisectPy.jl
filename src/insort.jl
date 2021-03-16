@@ -1,4 +1,4 @@
-export insort_left, insort_right
+export insort_left, insort_right, insort
 
 """
     insort_left(a, x, lo = 1, hi = nothing)
@@ -27,3 +27,5 @@ function insort_right(a, x, lo = 1, hi = nothing)
     lo = bisect_right(a, x, lo, hi)
     return insert!(a, lo, x)
 end
+
+const insort = insort_right
