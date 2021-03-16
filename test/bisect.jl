@@ -4,19 +4,21 @@ using BisectPy
 
 @test bisect_left([1, 2, 3, 4, 5], 3.5) == 4
 
-@test bisect_left([1, 2, 3, 4, 5], 2) == 2
-
-@test bisect_left([1, 2, 3, 3, 3, 5], 3) == 3
-
-@test bisect_left([1, 2, 3, 4, 5], 0) == 1
-
 @test bisect_right([1, 2, 3, 4, 5], 3.5) == 4
 
-@test bisect_right([1, 2, 3, 4, 5], 2) == 3
+@testset "Equal tests" begin
+    @test bisect_left([1, 2, 3, 4, 5], 2) == 2
+    @test bisect_left([1, 2, 3, 3, 3, 5], 3) == 3
+    @test bisect_right([1, 2, 3, 4, 5], 2) == 3
+    @test bisect_right([1, 2, 3, 3, 3, 5], 3) == 6
+end
 
-@test bisect_right([1, 2, 3, 3, 3, 5], 3) == 6
-
-@test bisect_right([1, 2, 3.0, 4, 5], 6) == 6
+@testset "Boundary tests" begin
+    @test bisect_left([1, 2, 3, 4, 5], 0) == 1
+    @test bisect_left([1, 2, 3, 4, 5], 5) == 5
+    @test bisect_right([1, 2, 3.0, 4, 5], 6) == 6
+    @test bisect_right([1, 2, 3, 4, 5], 1) == 2
+end
 
 @testset "`bisect_right`" begin
     function grade(score, breakpoints = [60, 70, 80, 90], grades = "FDCBA")
