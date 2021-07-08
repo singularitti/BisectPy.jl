@@ -9,6 +9,7 @@
 [![Build Status](https://api.cirrus-ci.com/github/singularitti/BisectPy.jl.svg)](https://cirrus-ci.com/github/singularitti/BisectPy.jl)
 [![Coverage](https://codecov.io/gh/singularitti/BisectPy.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/singularitti/BisectPy.jl)
 [![Coverage](https://coveralls.io/repos/github/singularitti/BisectPy.jl/badge.svg?branch=master)](https://coveralls.io/github/singularitti/BisectPy.jl?branch=master)
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/organization/repository)
 
 This is a package that migrates Python's [`bisect` module](https://docs.python.org/3.7/library/bisect.html#module-bisect) to Jula.
 
